@@ -1,0 +1,190 @@
+/* 
+    Certificación Free Code Camp -> Responsive Web Design.
+    Proyecto 4: Build a Product Landing Page.
+    Lagunez Medina Gabriel Ulises.
+*/
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(223, 219, 204);
+}
+
+#header{
+    background: linear-gradient(45deg,rgb(141, 49, 31) 10%, rgb(214, 180, 66));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+}
+#header-img{
+    width: 200px;
+    height: 100px;
+    margin: 0.7rem 0;
+}
+#header ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+#header a{
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+    margin: 0 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+h2{
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5rem;
+}
+
+.form-email h2{
+    margin-top: 10rem;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+input[type="email"]{
+    width: 30%;
+    height: 2.5rem;
+    font-size: larger;
+}
+
+input[type="email"]::placeholder{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+
+input[type="submit"]{
+    width: 10%;
+    height: 2.5rem;
+    font-size: larger;
+}
+
+.descriptions{
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.dcr-cello{
+    background-color:tan;
+    width:90%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1em;
+    padding: 1rem;
+}
+
+#dcr-cello-text h3{
+    margin: 1rem 0;
+    font-size: 1.5em;
+}
+
+#img-cello{
+    width: 200px;
+    height: 200px;
+    margin-right: 1em;
+}
+
+.demo, .fotter-page p{
+    display: flex;
+    justify-content: center;
+}
+
+#video{
+    width: 50em;
+    height: 30em;
+}
+
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.pricing h2{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.prc-cello{
+    background-color: burlywood;
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+}
+
+.prc-cello h3, .prc-cello p{
+    margin: 1rem 0;
+}
+
+.prc-cello button{
+    width: 50%;
+    height: 3rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.precio{
+    font-weight: bold;
+}
+
+.fotter-page{
+    background-color: rgb(12, 12, 58);
+    color: aliceblue;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotter-page ul{
+    display: flex;
+    list-style: none;
+}
+
+.fotter-page li{
+    margin: 2rem 2rem;
+}
+
+.fotter-page a{
+    color: aliceblue;
+    text-decoration: none;
+
+}
+
+@media (max-width:900px){
+    .pricing{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-bottom: 3rem;
+        text-align: center;
+    }
+    #header a{
+        color: rgb(253, 253, 253);
+        text-decoration: none;
+        margin: 0 2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+    }
+}

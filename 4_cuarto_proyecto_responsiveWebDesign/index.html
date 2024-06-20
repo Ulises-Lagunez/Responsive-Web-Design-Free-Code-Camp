@@ -1,0 +1,101 @@
+<!-- 
+    Certificación Free Code Camp _> Responsive Web Design.
+    Proyecto 4: Build a Product Landing Page.
+    Lagunez Medina Gabriel Ulises.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Product Landing Page.</title>
+</head>
+<body>
+    <header id="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGcAQbpZb75l-YgPQ7nZZYKNu5d-ckqN-iZg&s" alt="cellos logo" id="header-img" />
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#descriptions">Descripciones</a></li>
+                <li><a class="nav-link" href="#demonstration">Demostración</a></li>
+                <li><a class="nav-link" href="#pricing">Precios</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="form-email">
+        <h2>Mejor relación calidad-precio.</h2>
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input type="email" placeholder="Dirección de correo electronico" id="email" name="email">
+            <input type="submit" value="Enviar" required id="submit">
+        </form>
+    </div>
+    <section class="descriptions">
+        <h2 id="descriptions">Descripciones</h2>
+        <div class="dcr-cello">
+            <img src="data:image/jpeg;base64,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" alt="Cello 4/4 imagen" id="img-cello">
+            <div id="dcr-cello-text">
+                <h3>Violonchelo 4/4.</h3>
+                <p>Los violonchelos de tamaño completo (4/4) tienen cuatro cuerdas afinadas en las notas La, Re, Sol y Do en quintas (A1-D2-G2-C3).</p>
+            </div>
+        </div>
+        <div class="dcr-cello">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIHBhUSEhIWExUXGBgXEhgWEhUXFxUaGBYdFxUVFRUYHSggGBsnHhYZIjEhJS0rLi46GiIzRDMuNygtLisBCgoKDg0OGxAQGy0lICUtMCsuLS0tLy0tNS0yLSstLSstLSstLTYtLS0vNS0rLS0vLS0tLS8tLS0tLy0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAwEBAQEBAAAAAAAAAAAABQYHAwQCAQj/xABBEAACAQIEAgcFAwsCBwAAAAAAAQIDEQQFBiESMQcTIkFRYXGBkaGxwRQjMhUkQlJiY3KCkrLRM8Ilc5Ois8Ph/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAQFAQMGAv/EADERAQACAQIDBQYHAQEBAAAAAAABAgMEERIhQQUTMVFhInGBscHwIzIzkaHR4RTxUv/aAAwDAQACEQMRAD8A3EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFd1Xqqnp2VNNKUpveN5pqPLi7EJd+29jVky8GyTg085d/T784T1CtHEUVODUoyV4tcmnyaNsTujzExO0ugYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBdJ+EenNQt1qjrRr8dSlxSmurTm24bPdJy27uRCzYpm28c1xpNRXg2nls0zo5y95LpiM61dvruGpFTl2acZRXDTi2/AkYqzWvNX6nJF78oW2jXhiI3hKMl4xkmvgbUd0AAAAAAAAAAAAAAAAAAAAAAAAAAABzxFTqaEpWcuFN2XN2V7LzApE+kWpSqR48px6UlzjRU2nts4xfLzAy/pizRahzShV6qrh+CHC4Ymm4Sd5tpqHg787728jVxe3MeiTFYjDFp85+i30dFVcz0nh61LG4iT4Iyp06s4OjTajZK3Cmqe1nve3eMe81rLOf2cl6+q0dHeSTy11as8TRrOaguGg7whw3d3Ju8pO/guRtRV0AAAAAAAAAAAAAAAAAAAAAAAAAAAB5M2x8cryurXkm40oSqNLm1GLk0vcBm+nul6GKryWLo9VHbq+qjUqvzjOy8O/b0AqfSRm1PUOdxr0JWgoQg+thKLbdZRVoSSe157+aI8bTktG3km7zXBTntzt9FtyHRs860nCdLMsZSjOElGkqseqVnKPA0o34brf1Z6wfkh41kz3s7/fV6ui7QeK0tmNStiatN8cOBU6cpyX4lLik5RXK1krd7NyK0gAAAAAAAAAAAAAAAAAAAAAAAAAAAHzOCqQaaTTVmmrpp800BE5HpfB5BXnPDUFSlPaVnJ7LdJKTaivJWAzXpnwKwuYxrKTbqx3T5Lq+GKt/UY2Z35bNJ0fgo5fpmhCLbXApXfP7z7x/GRmI2JndMhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZL05S/OMMv2Kjf/UpAaPpiXHpvDP8Ac0v7EBJgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQdN8r5rh14UpP31Yf4A0fR0uLSmFf7in/AGICYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMa6aZ31FSXhRj8ay/wAAaRoWXHo7Cv8Acw+CsBOgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGKdMcr6qj5UYf+W4Gk9HsuLRWF/wCWvmwLEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYd0uz4tYSXhSpfGaDLS+jWXFofDfwyXuqSX0DCzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQOotW4fIezNudS11ThZy9Zd0V6kbPqseLlPimabQ5c/OOUecqFmPSNjcVK1CnGnfklF1J/Hb4ECdfkvO1eX399FtXsrDSN7zv/EffxUPO8fWzLHOpiJcVVxipNxjF7VbJWirKysWeC02xxMqfWUrTNNa+H+JvTGq8wy3BRpUJqVKF+GDpwna8m3y7XNsiajPkpkmK+CfpNJgy4Ym/jz+f7LxknSWqklHFUuD9um3KK/ig917LmvH2lHheGc3ZExG+OfhP9r9hMVDGYdTpyU4vdOLumWVbxaN6zyU96WpbhtG0ux6eQAAAAAAAAAAAAAAAAAAAAAAAArOudR/kPAKNN/fVLqn+ylzm/Tu8yFrdT3VNo8ZWHZ+j7++9vyx97MicOJccpcUpNud23K/jJvne5Q3mZ57uorERyiClXnga6qU5cMlez2fqmnzRnFkms7wxkpW9drIbMq8sViXOdrtK9lZf6ngdJp53xRLktbG2e0R98kjkmfPLMM406FLrL7VZQ4prvvG7stnbkQtVk4bztEb+a00GDvMMcUztz5dPF3nipYys6lR8Upbyfe347FRkmbW3nxXVKxWsVrHJNaWz6pp3GKW7oya62Hdb9eK7pL4m7S6qcV/Tqi6zR1z09ek/fRs9Gqq9JSi7xkk4td6e6Z0dbRaN48HJWrNZmJ8YfZlgAAAAAAAAAAAAAAAAAAAAAAAZBq6cs01ZW71T7EfJQjd++TZzuttbJmmI6fR1fZ9Ix6es+f1V2MeJ3IO6wefFyfAbMcc2LIfE7/0x/vTOn08bYq+5x+snfPf3vrCK836/RFZruWRddl/oR75TVG10VNltD3wh1tJ7d1/caevJmWmdGuKeI0xGLd3TnOn7E7x+EkdN2ffiw+7/wBcr2pThz7+cb/RaicrgAAAAAAAAAAAAAAAAAAAAAABm+HwSqazxlOXN3kvSXC/qUtccTqr1l0fe8Okx2hVMzwEsDjZ03tZ7eae6aKvLScd5rK1xZIyUi0IXGPY2YyyMxW0f5Y/OJ02H9Ovucfqp/Gv75ftCXBWfr9EVmujfJ8F12XP4PxlN4SHWQKjJO0riFv0/lf/AA+daey4JWv+qlzJml0/sTkt5T+yDqdRteMdfNaOjGjwabcv16s2vY1H/aWXZtdsPvlT9rW31G3lC2lgqwAAAAAAAAAAAAAAAAAAAAAABn+spfkrVtKutlOFp/yvhb90l7im1s91qK5PNf8AZ0d9prY56Ty+b41JglmeD6yKvUgtv2498fXvRnWYe9pxR4x8mzSZO5twz4T/ABLNMVC7ZXUla2hH4tWj/LD5ROmxfp190ON1E/i298/Mgn9oa8/ois136nwXfZf6Px/pa9N5b9vxPC21FK8mvDuXq/8AJXYsPfX26LLNl7qm/VZ9UZh9myh047cXZSXgufwVvaTtVk4cfDHXkhabFxZOKenNc9H0Fh9MYeMWn93Ftrxl2pfFssdLWIw128lHrbTbUXmfP5ckySEUAAAAAAAAAAAAAAAAAAAAAAAU/VmlamZV514VXKajaFOUVw8K5xi1ybd2Vmt0Fs88UW5+S20PaNcERSa8us/VDaVx327LY+MbxfjdfW3yPGmtPDw28Y5J2prEW4o8J5qpqvAfYMc0l2ZdqPlfmvY/oQc+Lu8nLwlOwZO8x+sKxj1ZP+GHyidFT8se5yOWd8lvfPzdqMLYue3f9EVPaX54939r7sn9Kff9IaXprCrB5Mpd8lxy9v4V7vmz1psfBj38+b1qL8eTby5PFQy2eqdTypKfBToxXWySu05P8MfN29nCef8An/6L8/CGMuq/5cUTEbzLRshyeGR5f1NOU5RTbXG02r80rJbf5LPDhjFXhiVHqM8578dojf0SJtaAAAAAAAAAAAAAAAAAAAAAAAAAzDK4fZtTYyCVkqrml3K8t/fxXKjw1F4+Loq+1pscz5bff7OmuMKpYeL709vSS/8AiNXaVdqxPq2dnX3mYUXGYONSLuu6H9qPMa7Nt49I6QzPZunmd5jrPWX1Qw6ljGl+k18bI0ajLbLeOL3JOnw0wY54Y9WnYqmqeBglybilblu1FFveNqxCrpbe8y8/RS+sji5vnKsr+5v6mNBzrafVp7W5XrX0X0nqkAAAAAAAAAAAAAAAAAAAAAAAAAFA0/BZjqTG1r9nj4U+7Z2/9ZU6eIyajJb4fz/i91Fpw6fFTr4/x/qmYigs707Qxs21VqV5Vb7X4E5wp0r90FBLZefiNfk7um22+/JnQY4yW33225/58Xlq2SfpD5Iqo/pc/wCvJisP9spThdx4lZtc16GYyd3fi8dnm+KMmOaTO269ZPSjgtULDQ2o1cPTxMYr8MalKuo1XBco8UHFtLvV+bZ0FYi1In3OcvaaZbRHr8nXo8xUcr1FicLN2cp9i/JuHErLzaTfsI2htw3tjnzSO06TfHTNHl82kFmpQAAAAAAAAAAAAAAAAAAAAAAB4c7zKOU5XOtN2UVz4XJJt2Tko72u1c8ZLxSvFLbhxWy3ilWe6g1tUxeF6qjUg+JWnKnCotrb7yfZ9Fd+aK3U6+IrtSea30nZnt8WSOUdP/EvpjCfknSVSb2vTqVZN93YfB8Ff2m3Q4+DFvPXn/TV2jkjJm2jpy/tnWV4pz0lg6X6lK79ZybS/pt7yv7TycWSKR0WXZWPhw8U9SbsvZH52I3+Jv8Ar8pyNN45tkeCXyXHOtrfARb50MTRXnwxU0vdYvNBkm+Hby5Of7QxxTPxecb/AMvTrLBPD51Guk+1a9pOL44W5SW8ZbRkn4oi6mZxZYyR1TtLEZcM456fKVhynWPXYmjTdWpJuUYuLox45X27Ukkmu+6tyJ2LXUvtG/NWZuzr0i07RtHXdfieqgAAAAAAAAAAAAAAAAAAAAACH1hio4PS+InLl1ckk+9yXDFe9o06iYjFbfySdHWbZ6xHnv8AtzZXpPK3m+Zwh+jC0qj8l3e17e85/S6fvcvp4uo1eo7jFv18Idsfi8wy3SWIwWJlOpXr1akI1JKCp06MklxRkn27q9o2ur22SuXWbNTFX2vv0UGHBfLbesffn8EFth6UaceUUor0irL4I561pyXm89XTY6RjpFI6QSf3a9I/3M3RziPvq8T4z99IcIyafu+R4tEPcPuFedHGUa9Kzq0KiqU03ZTTXDUpuXdxRfPxSJWjzRimYnwlC12mnNWLV8Y+S4zy7F6lz2rWvUp4SVCHV06qiuGvt+GMW72s7z7+KyukWWfFGbHMQq9PlnT5Y392yFynF/knUFGdRf6dS00+66cH7VcptLPdZo4l1q6d7gmK9Y5NvTujp3HP0AAAAAAAAAAAAAAAAAAAAADP+lzMODA0cOv059ZP+Gny/wC5x9xXdo5NqRXzXHZGLe838uThp+vDTenOKW059uo7bq/4IL2fNmvDauDFvPjKTqMdtTm9I8PrKo5hmcsxxTnJ+S/ZXcioz3tktxStsWOuOvDCMry7VxWHqZRFXOaak1x8mkufi/rcs8WkvNYnby+asya/DF5ibef0erAZhDFp8Lva19vJP6kTPgvjn2kvBqKZomaS9F+GRp23SF00nqF4dKnJ7bKP+GSdLqpxzwT4dELV6SMkcUPN0g4aNWrHEU9uPs1PKSXZl7l8DZq61m0ZI6+LzouKtZx26eDR9F4/8paXoVHzcEpesey/kW+C3FjiXO6vH3ea1U2bkcAAAAAAAAAAAAAAAAAAAABkXSBXWK1vwyfZpwpQ9L3nL5oou0LROXaen39XTdl14dPvHXf+vohs+zGWOr7fgje3h6kXJk459E/HSKQjKe8TVPi2OFZ9lmyrzKi5xT6rHyW6u78/Hc6HTW4sUOU11ODPb15pzS9O2Dcl3vv8tvoV2vtvfZb9lV2w7+crBGd47ldMLWJd8PNxezNd43ZhKYjM1isnlTm+13edndG+uTenDLV3e194XfoexDqafq03+hWlb0lFS+bZc6G2+Nz/AGtXbLE+cL4TVWAAAAAAAAAAAAAAAAAAAAAxnpDh9n1jWf60acl/Rw/7Sg19Pxp++kOp7Mtvp4++sqxXrdkiVqnzLlSqnu1WIl9y3Z5glVNV0eDERl4pp/NfNlx2fbeswoO16bWrb4JvJKfVZXD0XyuQNTbiyytdHXhw1j0e5cyOkvuD4WYnmzD6qT2MRDO7Tuh6i45JWm/0q238sIpl3oI9iXO9rz+JWPT6r8T1SAAAAAAAAAAAAAAAAAAAAAzjpdyhzpU8XFfg+7reUZO8JPyUm1/MV2vxbxF4XPZOeImcc9ecfVmVRXRVQvZcodlnqebDs3dbHhlB6up2wkH33+jLHs6fbn3KjtiPwon1+kpTL3+ZQ9F8iFm/PKyw/px7neUrHiIbX6qlkY2HxxSrVVGK4pNpRS5yb2SR7rTo82tERvL+gNLZT+RMhpUOcoq834zlvJ+9l/gx93SKuT1Wbvss3/b3JY2o4AAAAAAAAAAAAAAAAAAAADniKEcTQlCcVKMk1JNXTT2aZiYiY2lmtprO8eLF9aaKrZDUdSjGVXD87pNzpLwmlu4r9b3lTn0k0nevg6PSdoVyxFbcrffh/SmxqKXJ3RF22WG7vRlxGu0MwiNWy/NoL9r6MndnR7c+5Vdrz+FEev8Ab15RU48uh/CjRqK7ZJ96bpLcWGs+kPVKpuaohI3KSliKyhCLnKW0YxTcn6JGYpMvNrREby1jo90I8qqLE4pJ1rfdw5qlf9Jvvnb3FrptNw+1bxUOu13eexj8OstBJqqAAAAAAAAAAAAAAAAAAAAAAAACr53oHAZxUc3S6qo+c6T4G/NxXZk/No0309L9EzFrs2PlE7x6qriuiHhlejjH6VKSfxi18iPbRRPhKbTtb/6r+0qLqPRtRSqQcp1JUaqhaFNx4rwcuOEqjUWktudzxjiunmZmfR51Ob/prHL16e7zTOnui/FYvKqc41qUISWynxOS3aaairXvfkzN9POW3HExtP35M4dfXBSMcxO8ffmtWX9EdGm06+JqVPGMIxpr37v5HuujjrLzftW0/lr9/wALrkunsLkVO2Hoxh4y5zfrN7sk0xUp4Qr8uoyZfzz/AElDY0gAAAAAAAAAAAAAAAAAAAAAAAAAAAIHW2R1NQ6fnQpVFSnKUGpu+3DJN7x3W10YmInlMMxMx4JTK8K8DllKk3xOEIQbta7jFJu3nYyw9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/9k=" alt="Cello 3/4 imagen" id="img-cello">
+            <div id="dcr-cello-text">
+                <h3>Violonchelo 3/4.</h3>
+                <p>Los violonchelos de medio (3/4) tamaño tienen tres cuerdas afinadas con las notas A1-D2-G2 en cuartas (A1-D2-G2).</p>
+            </div>
+        </div>
+        <div class="dcr-cello">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlbOzuoRVgAOwzMUcxWO1SBvLEpwnzaBUQA&s" alt="Cello 1/4 imagen" id="img-cello">
+            <div id="dcr-cello-text" id="img-cello">
+                <h3>Violonchelo 1/4.</h3>
+                <p>Los violonchelos de cuarto tienen dos cuerdas afinadas con las notas A1-D2 en octavas (A1 al doble de la frecuencia de D2).</p>
+            </div>
+        </div>
+    </section>
+    <section class="demonstration">
+        <h2 id="demonstration">Demostración</h2>
+        <div class="demo">
+            <iframe  src="https://www.youtube.com/embed/mGQLXRTl3Z0" title="Mischa Maisky plays Bach Cello Suite No.1 in G (full)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="video"></iframe>
+        </div>
+    </section>
+    <section class="pricing">
+        <h2 id="pricing">Precios</h2>
+        <div class="prc-cello">
+            <h3>Violonchelo 1/4</h3>
+            <p class="precio">$ 1678.87</p>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum</p>
+            <button type="button">Seleccionar</button>
+        </div>
+        <div class="prc-cello">
+            <h3>Violonchelo 3/4</h3>
+            <p class="precio">$ 2369.77</p>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum</p>
+            <button type="button">Seleccionar</button>
+        </div>
+        <div class="prc-cello">
+            <h3>Violonchelo 4/4</h3>
+            <p class="precio">$ 3800.00</p>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum</p>
+            <button type="button">Seleccionar</button>
+        </div>
+    </section>
+    <div class="fotter-page">
+        <fotter>
+            <ul>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Terminos y condiciones</a></li>
+            </ul>
+            <p>Copyright 2024, violonchelo</p>
+        </fotter>
+    </div>
+</body>
+</html>
