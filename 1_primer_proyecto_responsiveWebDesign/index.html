@@ -1,0 +1,103 @@
+<!-- 
+    Certificación Free Code Camp -> Responsive Web Design.
+    Proyecto 1: Build a Survey Form.
+    Lagunez Medina Gabriel Ulises.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width"/>
+
+        <title>
+            Formulario de Registro.
+        </title>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="encabezado_Formulario">
+            <h1 id="title">Registro veterinaria perrones.</h1>
+            <p id="description">Llena los datos para cuenta crear una cuenta en mi veterinaria.</p>
+        </div>
+
+        <form name="survey-form" id="survey-form" method="post" action="datos_usuarios.csv">
+
+            <fieldset>
+                <legend>Datos de mi humano (propietario)</legend>
+
+                <label class="inline principal" for="name" id="name-label">Nombre(s): <input class="inline" id="name" type="text" placeholder="--name--" required /></label>
+
+                <label class="inline principal" for="apellido" id="last-name-label">Apellido(s): <input class="inline" id="apellido" type="text" placeholder="--last_name--"/></label>
+
+                <label class="inline principal" for="number" id="number-label">Edad: <input type="number" id="number" class="inline" min="18" max="120" placeholder="--age--"/></label>
+
+                <label class="inline principal" for="celular" id="telephon-label">NÃºmero de celular: <input class="inline" id="celular" type="tel" minlength="10" placeholder="--cel-number--"  required /></label>
+
+                <label class ="inline principal" for="email" id="email-label">Correo electronico: <input class="inline" id="email" type="email" placeholder="--email--" required /></label>
+
+                <label class ="inline principal" for="password" id="password-label">Password: <input class="inline" id="password" type="password" placeholder="--password--" required /></label>
+
+            </fieldset>
+            <hr>
+            <fieldset>
+                <legend>Tipo de mascota:</legend>
+                <label class="inline principal" name="tipo_mascota" for="dropdown">Selecciona especie: 
+                    
+                <select name="tipo_mascota" id="dropdown" required>
+
+                    <option  name="tipo_mascota" value="Perro">Perro.</option>
+
+                    <option name="tipo_mascota" value="Gato">Gato.</option>
+
+                    <option name="tipo_mascota" value="Ave">Ave.</option>
+
+                    <option name="tipo_mascota" value="Reptil">Reptil.</option>
+
+                </select>
+                </label>
+
+                <label class="inline principal">Selecciona genero.</label>
+
+                <label name="genero" class="servicio" for="genero-macho" id="genero-macho-label"><input name="genero" class="servicio" type="radio" value="macho" id="genero-macho" checked/> Macho.</label>
+
+                <label name="genero" for="genero-hembra" class="servicio" id="genero-hembra-label"><input name="genero" class="servicio" type="radio" value="hembra" id="genero-hembra" /> Hembra.</label>
+
+            </fieldset>
+            <hr>
+            <fieldset>
+                <legend>Datos de la macota.</legend>
+                
+                <label class="inline principal" for="foto_perfil">Foto de perfil. <input id="foto_perfil" type="file" /></label>
+
+                <label for="nombre_mascota" class="inline principal">Nombre de la mascota:
+                    <input class="inline" name="nombre_mascota" id="nombre_mascota" type="text" placeholder="--nombre_mascota--" required />
+                </label>
+
+               <label class="inline principal">Cuidados especiales: <textarea name="cuidados" class="inline" placeholder="--Informacion adicional sobre mi mascota--"></textarea></label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Servisios para mi mascota.</legend>
+
+                <label class="servicio" name="hospedaje" for="hospedaje" id="s_hospedaje_label"><input class="servicio" id="hospedaje" type="checkbox" value="hospedaje"> Hospedaje.</label>
+
+                <label class="servicio" name="medico" for="medico" id="s_medico_label"><input class="servicio" id="medico" type="checkbox" value="medico"></input> Medico.</label>
+
+                <label class="servicio" name="estetica" for="estetica" id="s_estetica_label"><input class="servicio" id="estetica" type="checkbox" value="estetica" /> Estetica</label>
+
+            </fieldset>
+
+            <hr>
+            <input name="survey-form" id="submit" class="boton_enviar" type="submit" value="Enviar">
+
+        </form>
+
+    </body>
+
+</html>
