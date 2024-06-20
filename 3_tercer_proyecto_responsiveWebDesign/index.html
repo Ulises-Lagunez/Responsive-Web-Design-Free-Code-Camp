@@ -1,0 +1,188 @@
+<!-- 
+    Certificación Free Code Camp _> Responsive Web Design.
+    Proyecto 3: Technical Documentation Page.
+    Lagunez Medina Gabriel Ulises.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF_8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Documentation CGI.</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <nav id="navbar">
+        <header>Programación de CGI.</header>
+        <ol>
+            <li><a href="#Introducción." class="nav-link">Introducción.</a></li>
+            <li><a href="#Qué_es_un_CGI." class="nav-link">Qué es un CGI.</a></li>
+            <li><a href="#Lenguajes_para_programación_de_CGI." class="nav-link">Lenguajes para programación de CGI.</a></li>
+            <li><a href="#CGI_de_prueba." class="nav-link">CGI de prueba.</a></li>
+            <li><a href="#Como_se_invoca_un_CGI." class="nav-link">Como se invoca un CGI.</a></li>
+            <li><a href="#Paso_de_argumentos_a_un_CGI." class="nav-link">Paso de argumentos a un CGI.</a></li>
+            <li><a href="#Referencias." class="nav-link">Referencias.</a></li>
+        </ol>
+    </nav>
+    <main name="container-doc" id="main-doc">
+        <section class="main-section" id="Introducción.">
+            <header>Introducción.</header>
+            <article>
+                <p>En un principio, cuando se cuando se desarrollo el WWW (el protocolo HTTP y el formato de archivo) se pensó que los documentos serían algo estático, esto es, que la información que se obtendría al acceder a ellos desde un navegador sería siempre exactamente la misma todas y cada una de las veces que fuese accedido. Esta forma de comportamiento quedó pronto obsolta, puesto que no satisfacía las necesidades de interactividad.</p>
+                <p>Se precisaba algún mecanismo mediante el cual poder acceder desde un navegador a servicios o aplicaciones ya existentes, por ejemplo, a aplicaciones de consulta de bases de datos, o a otras que se pudieran desarrollar. Para poder conseguir esto era necesario que, dado un acceso concreto desde un navegador , el servidor web fuese capaz de acceder a su vez a la aplicación externa pasándole los parámetros necesarios, recoger el resultado del acceso y devolver éste al navegador con el formato adecuado.</p>
+                <p>Para conseguirlo se desarrollo el Common Gateway Interface o "Interfaz de entrada común", que especifica una manera estándar de interconectar servidores de información con aplicaciones externas a través de programas. Estos programas se les suele denominar , por su extensión, programas CGI ó simplemente CGI.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Qué_es_un_CGI.">
+            <header>Qué es un CGI.</header>
+            <article>
+                <p>Supóngase que se dispone de una base de datos que desea hacer accesible a través del WWW para que pueda ser consultada en un navegador. Para ello, se habrá creado un archivo HTML que presentará un formulario, que el usuario verá en su navegador y llenara con los datos de su consulta. Este formulario tendrá como acción asociada un programa CGI que también se habrá desarrollado con anterioridad. El CGI recibirá como parametros los datos del formulario para la consulta, con ellos, realizará el acceso a la base de datos y recogerá los resultados. Con éstos producirá un archivo HTML que pasara al servidor web para que éste lo reenvíe al navegador. Finalmente, el navegador le presentará al usuario el documento con el resultado de su consulta.</p>
+                <p>Éste es sólo un ejemplo, pero no existe límite a las aplicaciones que se pueden conectar al WWW mediante las interfaces de entrada común CGI.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Lenguajes_para_programación_de_CGI.">
+            <header>Lenguajes para programación de CGI.</header>
+            <article>
+                <p>Dado que los CGI son programas convencionales, se puede utilizar cualquier lenguaje de programación para desarrollarlos.</p>
+                <p>Dependiendo de cómo se procese las instrucciones contenidas en un programa, se pueden diferenciar dos tipos de lenguaje:</p>
+                <ul>
+                    <li><b>Lenguajes interpretados.</b> Un programa escrito en un lenguaje de este tipo no es ejecutado directamente por el procesador si no que existe otro programa llamado <i>intérprete</i> que lo lee y ejecuta. Para poner en ejecucion el programa es necesario invocar al intérprete especificándole el nombre del programa, éste se encargará de ejecutarlo.</li>
+                    <li><b>Lenguajes compilados.</b> Para poder ejecutar un programa escrito en un lenguaje de este tipo es neceasrio traducirlo previamente al código máquina del procesador mediante una herramienta llamada <i>compilador.</i> Una vez compilado, el código resultante se ejecuta directamente.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="CGI_de_prueba.">
+            <header>CGI de prueba.</header>
+            <article>
+                <p>El objetivo de este CGI sera mostrar como texto sin formato, toda la información que recibe y que, de una u otra manera, podrá condicionar su ejecución.</p>
+                <p>A continuación, se presentan 3 versiones alternativas en tres lenguajes distintos del programa CGI de prueba "test.cgi".</p>
+                <ul>
+                    <li>
+                        <b>"test.cgi" en lenguaje C:</b><br>
+                        <code lang="c">
+                            <pre>
+#include <stdio.h>
+int main(int argc, char * argv[], char * envp[]){
+    int i;
+    char buff[1024];
+    printf("Content-type: text/plain\n\n");
+    printf("    ****  Nombre del mandato: %s\n", argv[0]);
+    printf("    ****  Argumentos de invocación: \n");
+    for(i=1; argv[i];i++){
+        printf("%s\n", argv[i]);
+    }
+    printf("Variables de entorno:\n");
+    for(i=0;envp[i];i++){
+        printf ("%s\n", envp[i]);
+    }
+    printf("    ****  Información en la entrada estándar:\n");
+    while((i=read(0,buff,1024))){
+        write(1, buff, i);
+    }
+    return 0;
+} 
+                            </pre>
+                        </code>
+                    </li>
+                    <li>
+                        <b>"test.cgi" como Perl script:</b>
+                        <code lang="perl">
+                            <pre>
+#!/usr/bin/perl
+print "Content-type: text/plain\n\n";
+print "     ****  Nombre del mandato: $0\n";
+print "     ****  Argumentos de invocación:\n";
+while ($arg = shift(@ARGV)) {print "$arg\n"; }
+print "     ****Variables de entorno:\n";
+foreach $key (keys(%ENV)) { print "$key=$ENV{$key}\n"; }
+print "     ****  Información en la entrada estándar:\n";
+while (<STDIN>) {print STDOUT; }
+                            </pre>
+                        </code>
+                    </li>
+                    <li>
+                        <b>"test.cgi" como Bourne shell script:</b>
+                        <code lang="Bourne_Shell">
+                            <pre>
+#!/bin/sh
+echo "Content-type: text/plain"
+echo ""
+echo "      ****  Nombre del mandato: $0"
+echo "      ****  Argumentos de invocación:"
+for ARG; do echo "$ARG"; done
+echo "      ****  Variables de entorno:"
+env
+echo "      ****  Información en la entrada estándar:"
+cat
+                            </pre>
+                        </code>
+                    </li>
+                </ul>
+                <p>Para que este CGI se pueda ejecutar como tal, deben verificarse los siguientes puntos:</p>
+                <ul>
+                    <li>El ejecutable de este programa debe residir en el directorio '/cgi-bin' de los programas CGI del sistema.</li>
+                    <li>En el caso de los <i>scripts</i>, deberá existir el archivo ejecutable correspondiente a su intérprete ('/bin/sh' o '/usr/bin/perl') indicado en la primera linia del <i>script</i>.</li>
+                    <li>El archivo deberá tener permisos de lectura y ejecución para todo el mundo. Esto en UNIX se consigue con el mandato chmod a+rx test.cgi.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Como_se_invoca_un_CGI.">
+            <header>Como se invoca un CGI.</header>
+            <article>
+                <p>Cada vez que un usuario soicita acceder a un URL, el servidor web correspondiente verifica si dicho URL se refiere a un programa CGi o un archivo HTML convencional. Esta verificación la realiza automaticámente basandose en la ubicación del archivo, en sus permisos y en su extensión.</p>
+                <p>Así, se invicará un CGI cada vez que desde el navegador se solicite explícitamente acceder a su URL, o implícitamente cada vez que el navegador tenga que abrir dicho URL por que sea el vínculo asociado a las etiquetas del documento HTML que se esté mostrando.</p>
+                <b>Directamente desde el navegador.</b>
+                <p>Se puede acceder a "test.cgi" abriendo directamente desde el navegador el URL corrspondiente a dicho CGI.</p>
+                <b>Como un hipervinculo.</b>
+                <p>Se puede invocar un CGI desde cualquier enlace (etiqueta A) de un documento HTML. Así, si se escribe el documento HTML "test.html" que incorpora una referencia a "test.cgi", y se hace clic en esta referencia, se obtendrá el mismo resultado que en el ejemplo anterior.</p>
+                <code lang="html">
+                    <pre>
+&lt;A HREF="/cgi-bin/test.cgi"&gt;Enlace al CGI de pruebas&lt;/A&gt;
+                    </pre>
+                </code>
+                <p>Hay que recordar que el archivo "test.html" deberá tener permisos de lectura para todo el mundo.</p>
+                <b>Como origen de una imagen.</b>
+                <p>Un poco más adelante se mostrará que un CGI puede devolver cualquier tipo de documento, no sólo texto, si no también imágenes, sonido, etc. Es muy usual el uso de un CGI como origen de una imagen de un documento HTML. Es importante resaltar que, en este caso, la salida producida por el CGI debe ser de tipo imagen.</p>
+                <p>Ésta es la forma típica de implementar contadores gráficos de las veces que se a accedido a una página.</p>
+                <code lang="html">
+                    <pre>
+&lt;IMG SRC="/cgi-bin/contador" /&gt;
+                    </pre>
+                </code>
+                <p>También es la forma de incrustar <i>banners</i> de publicidad que puedan ser distintos de una invocación a otra.</p>
+                <code lang="html">
+                    <pre>
+&lt;IMG SRC="/cgi-bin/banner" ALT="Inserte aqui su publicidad" /&gt;
+                    </pre>
+                </code>
+            </article>
+        </section>
+        <section class="main-section" id="Paso_de_argumentos_a_un_CGI.">
+            <header>Paso de argumentos a un CGI.</header>
+            <article>
+                <p>Es frecuente la equivocación de pensar que los programas CGI reciben sus argumentos u opciones a través de la línea de mandatos, como suele suceder en otros programas. Cuando se invoque un CGI, se le podrán pasar argumentos u opciones que configuren su ejecución añadiendo éstos a la derecha del URL.
+                <br>Por ejemplo: <br><br>
+                http://.../cgi-bin/test.cgi//PATH_INFO?QUERY_STRING <br><br>
+                Esta información le llegará al CGI a través de dos variables de entorno, a saber:
+                </p>
+                <ul>
+                    <li>
+                        QUERY_STRING: esta variable es la más importante. Está definida como cualquier texto que aparezca en el URL a paertir del primer caracter ?. Este texto estará codificado de la siguiente forma: los espacios en blanco se sustituyen por el carácter +, y otros caracteres especiales por su correspondiente valor hexadecimal con el prefijo %. <br>
+                        Cuando el CGI no sea invocado como acción asociada a un formulario HTML con método GET, esta información también aparecerá sin codoficar como si de argumentos de la linea de mandatos se tratara.
+                    </li>
+                    <li>
+                        PATH_INFO: esta variable está definida como el camino que aparece en el URL apartir del nombre del CGI hasta el primer carácter ?. Habitualmente, se usa esta información para indicarle al programa CGI caminos de búsqueda de archivos, pero podría usarse para cualquier otra cosa.
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Referencias.">
+            <header>Referencias.</header>
+            <ul>
+                <li>Programacion de aplicaciones web - Santiago Rodríguez de la Fuente, Fernando Pérez Costoya, Jesús Carretero Pérez, Félix García Dopico, David Nevado Martín, María de los Santos Pérez Hernández, Victor Robles Forcada, Francisco Rosales García - Ed. THOMSON - pp(233-240)</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
