@@ -17,6 +17,7 @@ html, body {
     width: 300px;
     height: 100%;
     border-right: 3px solid black;
+    overflow: scroll;
 }
 
 header {
@@ -31,6 +32,7 @@ header {
     color: #f7f7f7;
     text-align: left;
     margin: 0px;
+    z-index: -1;
 }
 
 #navbar li{
@@ -94,8 +96,8 @@ code {
   /* For mobile phones: */
     #navbar {
         background-color: white;
-        position: absolute;
-        top: 0;
+        position: sticky;
+        top: 1px;
         padding: 0;
         margin: 0;
         width: 100%;
@@ -103,12 +105,13 @@ code {
         border: none;
         z-index: 1;
         border-bottom: 2px solid;
+        overflow: scroll;
     }
 
     #main-doc {
         position: relative;
         margin-left: 0px;
-        margin-top: 270px;
+        margin-top: 20px;
     }
 }
 
@@ -118,12 +121,18 @@ code {
     }
 
     code {
-        margin-left: -20px;
+        margin-left: 0;
         width: 100%;
         padding: 15px;
         padding-left: 10px;
         padding-right: 45px;
         color: black;
         min-width: 233px;
+        overflow-x: scroll;
     }
+    section li {
+        margin: 15px 0px 0px 20px;
+        margin-left: 0;
+    }
+    
 }
